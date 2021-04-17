@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { isAddress } from '../../utils/index.js'
 import EthereumLogo from '../../assets/eth.png'
+import PenguinLogo from '../../assets/penguin.png'
+
 
 const BAD_IMAGES = {}
 
@@ -30,7 +32,7 @@ const StyledEthereumLogo = styled.div`
   }
 `
 
-export default function TokenLogo({ address, header = false, size = '24px', ...rest }) {
+export default function TokenLogo({ address, header = false, size = '50px', ...rest }) {
   const [error, setError] = useState(false)
 
   useEffect(() => {
@@ -41,7 +43,7 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     return (
       <Inline>
         <span {...rest} alt={''} style={{ fontSize: size }} role="img" aria-label="face">
-          🤔
+          🐧
         </span>
       </Inline>
     )
@@ -61,6 +63,20 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
       <StyledEthereumLogo size={size} {...rest}>
         <img
           src={EthereumLogo}
+          style={{
+            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
+            borderRadius: '24px',
+          }}
+          alt=""
+        />
+      </StyledEthereumLogo>
+    )
+  }
+  if (address?.toLowerCase() === '0x30bcd71b8d21fe830e493b30e90befba29de9114') {
+    return (
+      <StyledEthereumLogo size={size} {...rest}>
+        <img
+          src={PenguinLogo}
           style={{
             boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
             borderRadius: '24px',

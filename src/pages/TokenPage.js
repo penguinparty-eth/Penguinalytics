@@ -24,7 +24,6 @@ import CopyHelper from '../components/Copy'
 import { useMedia } from 'react-use'
 import { useDataForList } from '../contexts/PairData'
 import { useEffect } from 'react'
-import Warning from '../components/Warning'
 import { usePathDismissed, useSavedTokens } from '../contexts/LocalStorage'
 import { Hover, PageWrapper, ContentWrapper, StyledIcon, BlockedWrapper, BlockedMessageWrapper } from '../components'
 import { PlusCircle, Bookmark, AlertCircle } from 'react-feather'
@@ -158,7 +157,7 @@ function TokenPage({ address, history }) {
   const LENGTH = below1080 ? 10 : 16
   const formattedSymbol = symbol?.length > LENGTH ? symbol.slice(0, LENGTH) + '...' : symbol
 
-  const [dismissed, markAsDismissed] = usePathDismissed(history.location.pathname)
+  const [dismissed] = usePathDismissed(history.location.pathname)
   const [savedTokens, addToken] = useSavedTokens()
   const listedTokens = useListedTokens()
 
@@ -169,7 +168,7 @@ function TokenPage({ address, history }) {
     })
   }, [])
 
-  const [useTracked, setUseTracked] = useState(true)
+  const [useTracked, setUseTracked] = useState(false)
 
   if (TOKEN_BLACKLIST.includes(address)) {
     return (
@@ -191,12 +190,6 @@ function TokenPage({ address, history }) {
   return (
     <PageWrapper>
       <ThemedBackground backgroundColor={transparentize(0.6, backgroundColor)} />
-      <Warning
-        type={'token'}
-        show={!dismissed && listedTokens && !listedTokens.includes(address)}
-        setShow={markAsDismissed}
-        address={address}
-      />
       <ContentWrapper>
         <RowBetween style={{ flexWrap: 'wrap', alingItems: 'start' }}>
           <AutoRow align="flex-end" style={{ width: 'fit-content' }}>
@@ -359,11 +352,6 @@ function TokenPage({ address, history }) {
             <RowBetween style={{ marginTop: '3rem' }}>
               <TYPE.main fontSize={'1.125rem'}>Top Pairs</TYPE.main>
               <AutoRow gap="4px" style={{ width: 'fit-content' }}>
-                <Checkbox
-                  checked={useTracked}
-                  setChecked={() => setUseTracked(!useTracked)}
-                  text={'Hide untracked pairs'}
-                />
                 <QuestionHelper text="USD amounts may be inaccurate in low liquiidty pairs or pairs without ETH or stablecoins." />
               </AutoRow>
             </RowBetween>
