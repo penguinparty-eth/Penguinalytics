@@ -216,12 +216,6 @@ function PairPage({ pairAddress, history }) {
     <PageWrapper>
       <ThemedBackground backgroundColor={transparentize(0.6, backgroundColor)} />
       <span />
-      <Warning
-        type={'pair'}
-        show={!dismissed && listedTokens && !(listedTokens.includes(token0?.id) && listedTokens.includes(token1?.id))}
-        setShow={markAsDismissed}
-        address={pairAddress}
-      />
       <ContentWrapperLarge>
         <RowBetween>
           <TYPE.body>
@@ -247,7 +241,7 @@ function PairPage({ pairAddress, history }) {
                 <RowFixed style={{ flexWrap: 'wrap', minWidth: '100px' }}>
                   <RowFixed>
                     {token0 && token1 && (
-                      <DoubleTokenLogo a0={token0?.id || ''} a1={token1?.id || ''} size={32} margin={true} />
+                      <DoubleTokenLogo a0={token0?.id || ''} a1={token1?.id || ''} size={50} margin={true} />
                     )}{' '}
                     <TYPE.main fontSize={below1080 ? '1.5rem' : '2rem'} style={{ margin: '0 1rem' }}>
                       {token0 && token1 ? (
@@ -280,7 +274,7 @@ function PairPage({ pairAddress, history }) {
                     </Hover>
                   ) : !below1080 ? (
                     <StyledIcon>
-                      <Bookmark style={{ marginRight: '0.5rem', opacity: 0.4 }} />
+                      <Bookmark style={{ marginRight: '0.5rem', opacity: 0.7 }} />
                     </StyledIcon>
                   ) : (
                     <></>

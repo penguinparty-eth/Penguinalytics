@@ -65,7 +65,7 @@ function GlobalPage() {
   }, [])
 
   // for tracked data on pairs
-  const [useTracked, setUseTracked] = useState(true)
+  const [useTracked, setUseTracked] = useState(false)
 
   return (
     <PageWrapper>
@@ -147,12 +147,6 @@ function GlobalPage() {
                 Top Pairs
               </TYPE.main>
               <AutoRow gap="4px" width="100%" justifyContent="flex-end">
-                <CheckBox
-                  checked={useTracked}
-                  setChecked={() => setUseTracked(!useTracked)}
-                  text={'Hide untracked pairs'}
-                />
-                <QuestionHelper text="USD amounts may be inaccurate in low liquiidty pairs or pairs without ETH or stablecoins." />
                 <CustomLink to={'/pairs'}>See All</CustomLink>
               </AutoRow>
             </RowBetween>
