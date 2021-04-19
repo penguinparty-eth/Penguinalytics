@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { isAddress } from '../../utils/index.js'
-import EthereumLogo from '../../assets/eth.png'
-import PenguinLogo from '../../assets/penguin.png'
+// import EthereumLogo from '../../assets/eth.png'
+// import PenguinLogo from '../../assets/penguin.png'
 
+const EthereumLogo = 'https://info.uniswap.org/static/media/eth.5fc0c9bd.png'
+const PenguinLogo = 'www.gateway.pinata.cloud/ipfs/QmYSFM7NMEMUDJ8ChzrQK5rGDjeHtMg2aFSAtah4bLaw2H'
 
 const BAD_IMAGES = {}
 

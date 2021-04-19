@@ -1,7 +1,7 @@
 {
   "name": "@uniswap/penguinalytics",
   "private": true,
-  "homepage": "https://penguinswap.eth.link",
+  "homepage": ".",
   "devDependencies": {
     "@popperjs/core": "^2.4.2",
     "@reach/portal": "^0.10.3",
