@@ -170,23 +170,6 @@ function TokenPage({ address, history }) {
 
   const [useTracked, setUseTracked] = useState(false)
 
-  if (TOKEN_BLACKLIST.includes(address)) {
-    return (
-      <BlockedWrapper>
-        <BlockedMessageWrapper>
-          <AutoColumn gap="1rem" justify="center">
-            <TYPE.light style={{ textAlign: 'center' }}>
-              {BLOCKED_WARNINGS[address] ?? `This token is not supported.`}
-            </TYPE.light>
-            <Link external={true} href={'https://etherscan.io/address/' + address}>{`More about ${shortenAddress(
-              address
-            )}`}</Link>
-          </AutoColumn>
-        </BlockedMessageWrapper>
-      </BlockedWrapper>
-    )
-  }
-
   return (
     <PageWrapper>
       <ThemedBackground backgroundColor={transparentize(0.6, backgroundColor)} />
@@ -209,7 +192,6 @@ function TokenPage({ address, history }) {
           </AutoRow>
           {!below600 && <Search small={true} />}
         </RowBetween>
-        <WarningGrouping disabled={!dismissed && listedTokens && !listedTokens.includes(address)}>
           <DashboardWrapper style={{ marginTop: below1080 ? '0' : '1rem' }}>
             <RowBetween
               style={{
@@ -416,7 +398,6 @@ function TokenPage({ address, history }) {
               </Panel>
             </>
           </DashboardWrapper>
-        </WarningGrouping>
       </ContentWrapper>
     </PageWrapper>
   )
