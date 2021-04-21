@@ -5,7 +5,7 @@ import { isAddress } from '../../utils/index.js'
 // import PenguinLogo from '../../assets/penguin.png'
 
 const EthereumLogo = 'https://info.uniswap.org/static/media/eth.5fc0c9bd.png'
-const PenguinLogo = 'www.gateway.pinata.cloud/ipfs/QmYSFM7NMEMUDJ8ChzrQK5rGDjeHtMg2aFSAtah4bLaw2H'
+const PenguinLogo = 'https://ipfs.io/ipfs/QmYSFM7NMEMUDJ8ChzrQK5rGDjeHtMg2aFSAtah4bLaw2H'
 
 const BAD_IMAGES = {}
 
@@ -34,7 +34,7 @@ const StyledEthereumLogo = styled.div`
   }
 `
 
-export default function TokenLogo({ address, header = false, size = '40px', ...rest }) {
+export default function TokenLogo({ address, header = false, size = '20px', ...rest }) {
   const [error, setError] = useState(false)
 
   useEffect(() => {

@@ -123,6 +123,14 @@ function SideNav({ history }) {
                   <span>🐧PenguinSwap</span>
                 </Link>
               </HeaderText>
+              <HeaderText>
+              <BasicLink to="/token/0x30bcd71b8d21fe830e493b30e90befba29de9114">
+                <Option activeText={history.location.pathname === '/home' ?? undefined}>
+                  <TrendingUp size={20} style={{ marginRight: '.75rem' }} />
+                  🐟 Stats
+                </Option>
+              </BasicLink>
+              </HeaderText>
                 <BasicLink to="/home">
                   <Option activeText={history.location.pathname === '/home' ?? undefined}>
                     <TrendingUp size={20} style={{ marginRight: '.75rem' }} />
