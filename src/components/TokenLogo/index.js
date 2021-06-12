@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { isAddress } from '../../utils/index.js'
-// import EthereumLogo from '../../assets/eth.png'
-// import PenguinLogo from '../../assets/penguin.png'
+import EthereumLogo from '../../assets/eth.png'
+import PenguinLogo from '../../assets/penguin.png'
 
-const EthereumLogo = 'https://info.uniswap.org/static/media/eth.5fc0c9bd.png'
-const PenguinLogo = 'www.gateway.pinata.cloud/ipfs/QmYSFM7NMEMUDJ8ChzrQK5rGDjeHtMg2aFSAtah4bLaw2H'
-
+const ETHEREUM_LOGO = EthereumLogo
+const PENGUIN_LOGO = PenguinLogo
 const BAD_IMAGES = {}
-
 const Inline = styled.div`
   display: flex;
   align-items: center;
@@ -36,7 +34,6 @@ const StyledEthereumLogo = styled.div`
 
 export default function TokenLogo({ address, header = false, size = '40px', ...rest }) {
   const [error, setError] = useState(false)
-
   useEffect(() => {
     setError(false)
   }, [address])
@@ -64,7 +61,7 @@ export default function TokenLogo({ address, header = false, size = '40px', ...r
     return (
       <StyledEthereumLogo size={size} {...rest}>
         <img
-          src={EthereumLogo}
+          src={ETHEREUM_LOGO}
           style={{
             boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
             borderRadius: '24px',
@@ -78,7 +75,7 @@ export default function TokenLogo({ address, header = false, size = '40px', ...r
     return (
       <StyledEthereumLogo size={size} {...rest}>
         <img
-          src={PenguinLogo}
+          src={PENGUIN_LOGO}
           style={{
             boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
             borderRadius: '24px',
