@@ -51,7 +51,7 @@ export default function Title() {
             <img width={'50px'} src={Logo} alt="logo" />
           </UniIcon>
           {!below1080 && (
-            <div style={{ color: '#FFFFFF', marginLeft: '8px', marginTop: '0px' }}>Penguinalytics</div> //<img width={'84px'} style={{ marginLeft: '8px', marginTop: '0px' }} src={Wordmark} alt="logo" />
+            <div style={{ color: '#FFFFFF', marginLeft: '8px', marginTop: '0px' }}><img width={'100%'} style={{ marginLeft: '8px', marginTop: '0px', }} src={Wordmark} alt="logo" /></div> 
           )}
         </RowFixed>
         {below1080 && (
